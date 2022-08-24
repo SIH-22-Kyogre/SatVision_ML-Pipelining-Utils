@@ -6,11 +6,11 @@ from keras.applications.vgg16 import VGG16
 
 # Parameters
 INPUT_SHAPE = (64, 64, 3)
-LABELS = 'SeaLake', 'Highway', 'River', 'Pasture', 'Industrial', 'Residential', 'PermanentCrop', 'AnnualCrop', 'Forest', 'HerbaceousVegetation']
+LABELS = ['SeaLake', 'Highway', 'River', 'Pasture', 'Industrial', 'Residential', 'PermanentCrop', 'AnnualCrop', 'Forest', 'HerbaceousVegetation']
 N_LABELS = len(LABELS)
 
 
-def make_vgg16_model():
+def make_vgg16_classifier():
     
     conv_base = VGG16(
         include_top=False,

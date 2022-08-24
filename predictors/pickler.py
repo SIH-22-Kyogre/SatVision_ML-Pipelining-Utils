@@ -19,7 +19,7 @@ PREDICTOR_NAME = "predict.pkl"
 PREDICTOR_NAME = "vgg16_classifier_eurosat.pkl"
 
 # SET: model to load
-model = get_vgg16_classifier()
+model = make_vgg16_classifier()
 
 # --------------------------------
 
@@ -30,11 +30,11 @@ model.load_weights(WEIGHT_FILEPATH)
 print(f"Weights loaded from {WEIGHT_FILEPATH}")
 
 predictor_filepath = os.path.join(
-    os.path.abspath(os.path.join(__file__, os.path.pardir)),
+    os.path.split(WEIGHT_FILEPATH)[0],  # get container
     PREDICTOR_NAME
 )
 pickle.dump(
-    open(predictor_filepath, 'wb'),
-    model
+    model,
+    open(predictor_filepath, 'wb')
 )
 print(f"Pickled to {predictor_filepath}")
