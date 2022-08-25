@@ -11,12 +11,13 @@ WEIGHT_FILEPATH = os.path.join(
     os.path.pardir,
     "models",
     "vgg16",
-    "eurosat.h5"
+    "eurosat.h5",
+    ""
 )
 
 PREDICTOR_NAME = "predict.pkl"
 # SET: predictor name (default: predict.pkl)
-PREDICTOR_NAME = "vgg16_classifier_eurosat.pkl"
+PREDICTOR_NAME = "efficientnetv0.pkl"
 
 # SET: model to load
 model = make_vgg16_classifier()
@@ -38,3 +39,16 @@ pickle.dump(
     open(predictor_filepath, 'wb')
 )
 print(f"Pickled to {predictor_filepath}")
+
+
+# EfficientNetV0 - bin to pkl, hopefully
+# comment if not commented in Debian
+
+# PATH = r"models\\model4.bin"
+
+# model = torch.load(PATH)
+# # model.eval()
+
+# with open(r"models\\model4.pkl","wb") as f:
+#     pickle.dump(model, f)
+
