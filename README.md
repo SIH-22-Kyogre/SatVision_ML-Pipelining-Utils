@@ -1,4 +1,4 @@
-# SatVision_Pipelining-Utils
+# Pipelining Utilities for SatVision
 
 ### Predictors
 
