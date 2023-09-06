@@ -1,4 +1,4 @@
-# Pipelining Utilities for SatVision
+# Machine Learning Pipelining Utilities for SatVision
 
 ### Predictors
 
